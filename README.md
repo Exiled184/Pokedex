@@ -13,14 +13,14 @@ Think of it as similarly Pokemon Storage System Bill/Lanette's PC, where excess 
 In this version:
 
 - 1 - Log in to your own personal profile,
-- 2 - Add/remove pokemon games,
-- 3 - Add/remove pokemon from a pokedex list to your own list,
+- 2 - Add/remove pokemon games (GEN 1),
+- 3 - Add/remove pokemon from a pokedex list to your own list (GEN 1),
 - 4 - Add/remove pokemon from the list to the pokemon game,
 - 5 - View the pokemon information,
 
 # Screenshot(s):
 
-- Wireframe V1 - ![alt text](Wireframes/Wireframe%20v1.png)
+- Wireframe V1 - ![alt text](/public/images/Wireframes/Wireframe%20v1.png)
 
 # Technologies used:
 
@@ -40,3 +40,4 @@ TBA
 # Next Steps:
 
 - [ ] Adding Thingiverse API to show 3D prints of pokemon chosen
+- [ ] Adding difference generations of pokemon
