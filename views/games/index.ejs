@@ -1,10 +1,24 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/public/stylesheets/style.css" />
-    <title>My PC</title>
-  </head>
-  <body></body>
-</html>
+<%- include('../partials/header') %>
+
+
+<h1>Game List:</h1>
+
+<ul>
+    <li>Game Title:</li>
+    <li>Release Year:</li>
+    <li>Console:</li>
+</ul>
+
+
+
+<body>
+  <h1>Games</h1>
+  <% games.forEach (function(g) { %>
+  <ul>
+    <li><%= g.gameTitle %></li>
+    <li><%= g.releaseYear %></li>
+    <li><%= g.console %></li>
+  </p>
+  <% }); %>
+</body>
+<%- include('../partials/footer') %>

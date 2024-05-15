@@ -1,0 +1,42 @@
+<%- include('../partials/header') %>
+
+<h2>Enter a New Game</h2>
+<form action="/games" method="POST">
+  <label
+    >Game:
+    <select name="gameTitle">
+      <option value="Red">Red</option>
+      <option value="Blue">Blue</option>
+      <option value="Yellow">Yellow</option>
+      <option value="FireRed">FireRed</option>
+      <option value="LeafGreen">LeafGreen</option>
+    </select>
+  </label>
+  <br />
+  <label
+    >Release Year:
+    <select name="releaseYear">
+      <option value="1998">1998</option>
+      <option value="1999">1999</option>
+      <option value="2004">2004</option>
+    </select> </label
+  ><br />
+  <label
+    >Console:
+    <select name="console">
+      <option value="Nintendo Gameboy">Nintendo Gameboy</option>
+      <option value="Nintendo Gameboy Colour">Nintendo Gameboy Colour</option>
+      <option value=" Nintendo Gameboy Advance">
+        Nintendo Gameboy Advance
+      </option>
+      <option value=" Nintendo Gameboy Advance SP">
+        Nintendo Gameboy Advance SP
+      </option>
+    </select>
+  </label>
+  <br />
+  <button type="submit">Add Game</button>
+</form>
+<p><%= errorMsg %></p>
+
+<%- include('../partials/footer') %>
