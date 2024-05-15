@@ -8,6 +8,6 @@ router.get("/", gameCtrl.index);
 router.get("/new", gameCtrl.new);
 router.get("/:id", gameCtrl.show);
 router.post("/", gameCtrl.create);
-router.post("/:id", gameCtrl.delete);
+router.delete("/:id", gameCtrl.delete);
 
 module.exports = router;
