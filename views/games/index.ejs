@@ -1,24 +1,31 @@
 <%- include('../partials/header') %>
+<table>
+  <h1>Games List</h1>
+  <tr>
+    <th>Remove:</th>
+    <th>Game Title:</th>
+    <th>Release year</th>
+    <th>Console:</th>
+    <th>Trainer Name</th>
+  </tr>
+</thead>
 
-
-<h1>Game List:</h1>
-
-<ul>
-    <li>Game Title:</li>
-    <li>Release Year:</li>
-    <li>Console:</li>
-</ul>
-
-
-
-<body>
-  <h1>Games</h1>
   <% games.forEach (function(g) { %>
-  <ul>
-    <li><%= g.gameTitle %></li>
-    <li><%= g.releaseYear %></li>
-    <li><%= g.console %></li>
-  </p>
+
+<tbody>
+    <tr>
+    <td><form action="/games/<%= g.id %>?_method=DELETE"  class="delete-form"   method="POST">
+     <button type="submit">X</button>
+    </form></td>
+  
+    <td><%= g.gameTitle %></td>
+    <td><%= g.releaseYear %></td>
+    <td><%= g.console %></td>
+    <td><%= g.trainerName %></td>
+  </tr>
   <% }); %>
-</body>
+
+</tbody>
+
+</table>
 <%- include('../partials/footer') %>

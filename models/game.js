@@ -8,7 +8,7 @@ const gameSchema = new Schema(
       enum: ["Red", "Blue", "Yellow", "Fire Red", "Leaf Green"],
     },
     releaseYear: {
-      type: Date,
+      type: String,
     },
     console: {
       type: String,
@@ -18,6 +18,10 @@ const gameSchema = new Schema(
         "Nintendo Gameboy Advance",
         "Nintendo Gameboy Advance SP",
       ],
+    },
+    trainerName: {
+      type: String,
+      required: true,
     },
   },
   { timestamps: true }

@@ -5,6 +5,7 @@ module.exports = {
   show,
   new: newGame,
   create,
+  delete: deleteGame,
 };
 
 async function index(req, res) {
@@ -20,7 +21,24 @@ function newGame(req, res) {
   res.render("games/new", { title: "Add Game", errorMsg: "" });
 }
 
-function create(req, res) {
-  game.create(req.body);
-  res.redirect("/games");
+async function create(req, res) {
+  try {
+    await Game.create(req.body);
+    res.redirect("/games");
+  } catch {
+    console.log(errorMsg);
+    res.render("games/new", { errorMsg: "Try Again" });
+  }
+}
+
+async function deleteGame(req, res) {
+  const gameID = await Game.findOne({
+    "games._id": req.params.id,
+    "games.user": req.user._id,
+  });
+  //   console.log("attempt 1" + gameID);
+  gameID.remove(req.params.id);
+  //   console.log("attempt 2" + gameID);
+  await gameID.save();
+  res.redirect("/games", { errorMsg: "" });
 }
