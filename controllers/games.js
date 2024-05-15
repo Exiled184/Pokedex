@@ -32,8 +32,7 @@ async function create(req, res) {
 }
 
 function deleteGame(req, res) {
-  const gameID = req.params.id;
-  Game.remove(
+  Game.findOneAndDelete(
     {
       _id: req.params.id,
     },
