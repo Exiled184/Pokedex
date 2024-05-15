@@ -31,25 +31,10 @@ async function create(req, res) {
   }
 }
 
-function deleteGame(req, res) {
-  Game.findOneAndDelete(
-    {
-      _id: req.params.id,
-    },
-    function (err) {
-      res.redirect("games");
-    }
-  );
+async function deleteGame(req, res) {
+  const game = await Game.findOne({
+    _id: req.params.id,
+  });
+  await game.deleteOne();
+  res.redirect("/games");
 }
-
-// async function deleteGame(req, res) {
-//   const gameID = await Game.findOne({
-//     "games._id": req.params.id,
-//     "games.user": req.user._id,
-//   });
-//   //   console.log("attempt 1" + gameID);
-//   gameID.remove(req.params.id);
-//   //   console.log("attempt 2" + gameID);
-//   await gameID.save();
-//   res.redirect("/games", { errorMsg: "" });
-// }
