@@ -1,12 +1,14 @@
 <%- include('../partials/header') %>
 <table>
-  <h1>Games List</h1>
+  <h1>Games List:</h1>
   <tr>
-    <th>Remove:</th>
+
     <th>Version Title:</th>
     <th>Release year</th>
     <th>Console:</th>
     <th>Trainer Name</th>
+    <th>Pokemon List</th>
+    <th>Remove Game:</th>
   </tr>
 </thead>
 
@@ -14,14 +16,14 @@
 
 <tbody>
     <tr>
-    <td><form action="/games/<%= g.id %>?_method=DELETE"  class="delete-form"   method="POST">
-     <button type="submit">X</button>
-    </form></td>
-  
     <td><%= g.versionTitle %></td>
     <td><%= g.releaseYear %></td>
     <td><%= g.console %></td>
     <td><%= g.trainerName %></td>
+    <td><a href="/games/<%= g._id %>">Pokemon</a></td>
+    <td><form action="/games/<%= g.id %>?_method=DELETE"  class="delete-form"   method="POST">
+      <button type="submit">X</button>
+     </form></td>
   </tr>
   <% }); %>
 
