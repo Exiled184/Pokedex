@@ -3,7 +3,7 @@ const Schema = mongoose.Schema;
 
 const gameSchema = new Schema(
   {
-    gameTitle: {
+    versionTitle: {
       type: String,
       enum: ["Red", "Blue", "Yellow", "Fire Red", "Leaf Green"],
     },

@@ -1,10 +1,10 @@
 <%- include('../partials/header') %>
 
-<h2>Enter a New Game</h2>
+<h2>Enter a New Game Version</h2>
 <form action="/games" method="POST">
   <label
-    >Game:
-    <select name="gameTitle">
+    >Game Version:
+    <select name="versionTitle">
       <option value="Red">Red</option>
       <option value="Blue">Blue</option>
       <option value="Yellow">Yellow</option>
@@ -49,7 +49,7 @@
 
   <br />
 
-  <button type="submit">Add Game</button>
+  <button type="submit">Add Game Version</button>
 </form>
 <p><%= errorMsg %></p>
 
