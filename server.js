@@ -7,6 +7,7 @@ var methodOverride = require("method-override");
 
 var indexRouter = require("./routes/index");
 var gamesRouter = require("./routes/games");
+var pokemonsRouter = require("./routes/pokemons");
 
 var app = express();
 
@@ -26,6 +27,7 @@ app.use(methodOverride("_method"));
 
 app.use("/", indexRouter);
 app.use("/games", gamesRouter);
+app.use("/pokemons", pokemonsRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

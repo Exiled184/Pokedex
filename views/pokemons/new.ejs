@@ -1,18 +1,21 @@
 <%- include('../partials/header') %>
 
-<div>
-  Before adding, please ensure that the Pokemon is not in the following list:
-</div>
-<section id="badge-container">
-  <% pokemon.forEach(function(p) { %>
-  <article class="badge"><%= p.name %></article>
-  <% }) %>
-</section>
+<main>
+    <form action="/pokemons/new" method="GET">
+    <input type="search" class="search_pokemon" placeholder="Pokemon Name or ID#" name="search_term" required>    
+    <button class="button_search" class="button_search_pokemon">Search</button>
+    </form>
 
-<form id="add-pokemon-form" action="/pokemon" method="POST">
-  <label>Name:</label>
-  <input type="text" name="name" />
-  <input type="submit" value="Add Performer" />
-</form>
+</main>
+<body>
+    <p class="pokemon_info">
+        <p class="pokemon_name"><%= pokemon ? pokemon.name: "" %></p>
+        <p class="pokemon_id">Pokemon ID#: <%= pokemon ? pokemon.id: "" %></p>
+    </p>
+  <img
+      src='<%= pokemon ? pokemon.sprites.front_default: "" %>'    class="pokemon_image"  ></img>
+
+
+</body>
 
 <%- include('../partials/footer') %>

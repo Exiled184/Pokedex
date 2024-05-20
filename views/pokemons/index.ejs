@@ -1,0 +1,35 @@
+<%- include('../partials/header') %>
+
+<table>
+    <h1>Pokedex List:</h1>
+    <tr>
+  
+      <th>ID:</th>
+      <th>Name:</th>
+      <th>Type/s:</th>
+      <th>Stats</th>
+      <th>Remove:</th>
+    </tr>
+  </thead>
+<tbody>
+  <% pokemons.forEach (function(p) { %>
+  <tr>
+    <td><%= p.name %></td>
+    <td><%= p.id %></td>
+    <td><%= p.types %></td>
+    <td><%= p.stats %></td>
+    <td><a href="/pokemons/<%= p._id %>">Pokemon</a></td>
+    <td>
+      <form
+        action="/pokemons/<%= p.id %>?_method=DELETE"
+        class="delete-form"
+        method="POST"
+      >
+        <button type="submit">X</button>
+      </form>
+    </td>
+  </tr>
+  <% }); %>
+</tbody>
+
+<%- include('../partials/footer') %>
