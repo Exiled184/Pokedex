@@ -1,0 +1,32 @@
+<%- include('../partials/header') %>
+
+<main>
+    <form action="/pokemons/search" method="GET">
+    <input type="search" class="search_pokemon" placeholder="Pokemon Name or ID#" name="search_term" required>    
+    <button class="button_search" class="button_search_pokemon">Search</button>
+    </form>
+
+</main>
+<body>
+    <img
+    src='<%= pokemon ? pokemon.sprites.front_default: "" %>'    class="pokemon_image"  ></img>
+
+
+    <p class="pokemon_info">
+        <p class="pokemon_name"><%= pokemon ? pokemon.name: "" %></p>
+        <p class="pokemon_id"><%= pokemon ? pokemon.id: "" %></p>
+    </p>
+ 
+        <h3>Types:</h3>
+        <p>
+            <% if (pokemon && pokemon.types) { %>
+                <% pokemon.types.forEach(function(typeObj) { %>
+                    <p><%= typeObj.type.name %></p>
+                <% }) %>
+            <% } %>
+                </p>
+    </div>
+
+</body>
+
+<%- include('../partials/footer') %>

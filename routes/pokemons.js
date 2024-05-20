@@ -5,7 +5,8 @@ const pokemonCtrl = require("../controllers/pokemons");
 module.exports = router;
 
 router.get("/", pokemonCtrl.index);
-router.get("/new", pokemonCtrl.new);
+router.get("/search", pokemonCtrl.searchPokemon);
+// router.get("/search", pokemonCtrl.displayAllPokemon);
 // router.post("/new", pokemonCtrl.newPokemon);
 // router.post("/new", async function (req, res) {
 //   try {

@@ -5,7 +5,8 @@ module.exports = {
   fetchPokemonData,
   fetchPokemonList,
   index,
-  new: newPokemon,
+  searchPokemon,
+  // displayAllPokemon,
 };
 
 async function index(req, res) {
@@ -37,13 +38,16 @@ async function fetchPokemonList() {
   }
 }
 
-async function newPokemon(req, res) {
-  const pokemonList = await fetchPokemonList();
+async function searchPokemon(req, res) {
   const pokemon = await fetchPokemonData(req.query.search_term);
-  res.render("pokemons/new", {
-    title: "Add Pokemons",
-    pokemonList,
+  res.render("pokemons/search", {
+    title: "Search Pokemons",
     pokemon,
     errorMsg: "",
   });
 }
+
+// async function displayAllPokemon(req, res) {
+//   const pokemon = await fetchPokemonList();
+//   res.render("pokemons/search", { title: "All Pokemon", pokemon });
+// }
