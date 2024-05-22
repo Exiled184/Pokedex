@@ -11,22 +11,30 @@
     <img
     src='<%= pokemon ? pokemon.sprites.front_default: "" %>'    class="pokemon_image"  ></img>
 
-
-    <p class="pokemon_info">
+    <div class="pokemon_info">
+        <h3>Pokemon name:</h3>
         <p class="pokemon_name"><%= pokemon ? pokemon.name: "" %></p>
+        <h3>Pokemon ID#:</h3>
         <p class="pokemon_id"><%= pokemon ? pokemon.id: "" %></p>
-    </p>
- 
+   
         <h3>Types:</h3>
-        <p>
+        <p class="pokemon_type">
             <% if (pokemon && pokemon.types) { %>
                 <% pokemon.types.forEach(function(typeObj) { %>
                     <p><%= typeObj.type.name %></p>
                 <% }) %>
             <% } %>
-                </p>
-    </div>
+         </p>
+     </div>
 
+     <h2>Add Pokmeon to "My Pokemon List"</h2>
+     <p>test</p>
+     <% console.log(pokemon) %>
+     <form action="/pokemons/save?id=<%= pokemon && pokemon.id %>" method="POST" class="pokemon_list">
+       <br />
+       <button type="submit">Add Pokemon</button>
+     </form>
 </body>
+
 
 <%- include('../partials/footer') %>

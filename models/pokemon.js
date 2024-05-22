@@ -17,7 +17,7 @@ const pokemonSchema = new Schema({
   ],
   abilities: [
     {
-      type: String,
+      type: Array,
       required: true,
     },
   ],
