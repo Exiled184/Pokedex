@@ -8,6 +8,7 @@ module.exports = {
   searchPokemon,
   // displayAllPokemon,
   savePokemon,
+  deleteOnePokemon,
 };
 
 async function index(req, res) {
@@ -50,12 +51,8 @@ async function searchPokemon(req, res) {
 }
 
 async function savePokemon(req, res) {
-  // const pokemon = await fetchPokemonData(req.query.id);
-  console.log(req.query, "req query");
-  console.log(req.path, "path");
   try {
     const data = await fetchPokemonData(req.query.id);
-    console.log(data);
     const pokemonData = {
       name: data.name,
       id: data.id,
@@ -82,22 +79,20 @@ async function savePokemon(req, res) {
     };
     const pokemonNew = new Pokemon(pokemonData);
     await pokemonNew.save();
-    console.log("Pokémon saved:", pokemonNew);
-    return pokemonNew;
+    // return pokemonNew;
+    res.redirect("/pokemons");
   } catch (error) {
     console.error("Error:", error);
   }
 }
 
-// async function savePokemon(req, res) {
-//   try {
-//     const response = await pokemons.save(req.body);
-//     res.redirect("/pokemons", response);
-//   } catch {
-//     console.log("");
-//     res.render("pokemon/search", response);
-//   }
-// }
+async function deleteOnePokemon(req, res) {
+  const pokemon = await Pokemon.findOne({
+    _id: req.params.id,
+  });
+  await pokemon.deleteOne();
+  res.redirect("/pokemons");
+}
 
 // async function displayAllPokemon(req, res) {
 //   const pokemon = await fetchPokemonList();

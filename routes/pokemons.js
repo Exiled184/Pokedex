@@ -8,6 +8,7 @@ module.exports = router;
 router.get("/", pokemonCtrl.index);
 router.get("/search", pokemonCtrl.searchPokemon);
 router.post("/save", pokemonCtrl.savePokemon);
+router.delete("/:id", pokemonCtrl.deleteOnePokemon);
 // router.get("/search", pokemonCtrl.displayAllPokemon);
 // router.post("/new", pokemonCtrl.newPokemon);
 // router.post("/new", async function (req, res) {
