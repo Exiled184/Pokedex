@@ -8,14 +8,15 @@
 
 </main>
 <body>
+    <div class="pokemon_info">
     <img
     src='<%= pokemon ? pokemon.sprites.front_default: "" %>'    class="pokemon_image"  ></img>
 
-    <div class="pokemon_info">
+    
         <h3>Pokemon name:</h3>
         <p class="pokemon_name"><%= pokemon ? pokemon.name: "" %></p>
-        <h3>Pokemon ID#:</h3>
-        <p class="pokemon_id"><%= pokemon ? pokemon.id: "" %></p>
+        <h3>Pokemon ID:</h3>
+        <p class="pokemon_id">#<%= pokemon ? pokemon.id: "" %></p>
    
         <h3>Types:</h3>
         <p class="pokemon_type">
@@ -25,14 +26,19 @@
                 <% }) %>
             <% } %>
          </p>
-     </div>
 
-     <h2>Add Pokmeon to "My Pokemon List"</h2>
-     <p>test</p>
-     <% console.log(pokemon) %>
+         <h3>Stats:</h3>
+         <p class="pokemon_stats">
+            <% if(pokemon && pokemon.stats) { %>
+                <% pokemon.stats.forEach(function(statsObj) { %>
+                <p><%= statsObj.stat.name %>: <%= statsObj.base_stat %></p>
+                <% }) %>
+               <% } %>
+         </p>
+     </div>
      <form action="/pokemons/save?id=<%= pokemon && pokemon.id %>" method="POST" class="pokemon_list">
        <br />
-       <button type="submit">Add Pokemon</button>
+       <button type="submit">Add Pokemon to "My Pokemon List"</button>
      </form>
 </body>
 

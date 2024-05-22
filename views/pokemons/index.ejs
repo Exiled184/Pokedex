@@ -2,26 +2,27 @@
 
 <table>
     <h1>Pokedex List:</h1>
-    <tr>
-  
+ 
+      <th>Image:</th>
       <th>ID:</th>
       <th>Name:</th>
       <th>Type/s:</th>
-      <th>Stats</th>
+      <th>Pokemon Details</th>
       <th>Remove:</th>
     </tr>
   </thead>
 <tbody>
   <% pokemons.forEach (function(p) { %>
-  <tr>
-    <td><%= p.name %></td>
+    <td><img
+      src="<%= p.sprites.front_default %>" class="pokemon_image"  ></img>
+    </td>
     <td><%= p.id %></td>
+    <td><%= p.name %></td>
     <td><%= p.types %></td>
-    <td><%= p.stats %></td>
     <td><a href="/pokemons/<%= p._id %>">Pokemon</a></td>
     <td>
       <form
-        action="/pokemons/<%= p.id %>?_method=DELETE"
+        action="/pokemons/<%= p._id %>?_method=DELETE"
         class="delete-form"
         method="POST"
       >

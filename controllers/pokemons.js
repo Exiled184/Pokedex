@@ -87,10 +87,8 @@ async function savePokemon(req, res) {
 }
 
 async function deleteOnePokemon(req, res) {
-  const pokemon = await Pokemon.findOne({
-    _id: req.params.id,
-  });
-  await pokemon.deleteOne();
+  console.log(req);
+  await Pokemon.deleteOne({ _id: req.params.id });
   res.redirect("/pokemons");
 }
 
