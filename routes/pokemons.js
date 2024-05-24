@@ -8,10 +8,7 @@ module.exports = router;
 
 router.get("/", pokemonCtrl.index);
 router.get("/search", ensureLoggedIn, pokemonCtrl.searchPokemon);
+// router.get("/:id", pokemonCtrl.show);
 router.post("/save", ensureLoggedIn, pokemonCtrl.savePokemon);
-router.post(
-  "/games/:id/pokemons",
-  ensureLoggedIn,
-  pokemonCtrl.addPokemonToGame
-);
+
 router.delete("/:id", ensureLoggedIn, pokemonCtrl.deleteOnePokemon);
