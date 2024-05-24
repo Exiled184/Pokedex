@@ -5,7 +5,12 @@
     <input type="search" class="search_pokemon" placeholder="Pokemon Name or ID#" name="search_term" required>    
     <button class="button_search" class="button_search_pokemon">Search</button>
     </form>
-
+    <div class="pokemon_info_addButton">
+        <form action="/pokemons/save?id=<%= pokemon && pokemon.id %>" method="POST" class="pokemon_list">
+           <br />
+           <button type="submit">Add Pokemon to "My Pokemon List"</button>
+         </form></div>
+    </div>
 </main>
 <body>
     <div class="pokemon_info_container">
@@ -37,12 +42,7 @@
                 <% }) %>
                <% } %>
          </p></div>
-    <div class="pokemon_info_addButton">
-         <form action="/pokemons/save?id=<%= pokemon && pokemon.id %>" method="POST" class="pokemon_list">
-            <br />
-            <button type="submit">Add Pokemon to "My Pokemon List"</button>
-          </form></div>
-     </div>
+   
     
 </body>
 

@@ -6,9 +6,9 @@ module.exports = {
   fetchPokemonList,
   index,
   searchPokemon,
-  // displayAllPokemon,
   savePokemon,
   deleteOnePokemon,
+  addPokemonToGame,
 };
 
 async function index(req, res) {
@@ -79,7 +79,6 @@ async function savePokemon(req, res) {
     };
     const pokemonNew = new Pokemon(pokemonData);
     await pokemonNew.save();
-    // return pokemonNew;
     res.redirect("/pokemons");
   } catch (error) {
     console.error("Error:", error);
@@ -92,7 +91,9 @@ async function deleteOnePokemon(req, res) {
   res.redirect("/pokemons");
 }
 
-// async function displayAllPokemon(req, res) {
-//   const pokemon = await fetchPokemonList();
-//   res.render("pokemons/search", { title: "All Pokemon", pokemon });
-// }
+async function addPokemonToGame(req, res) {
+  const game = await Game.findById(req.params.id);
+  game.pokemon.push(req.body.pokemonId);
+  await game.save();
+  res.redirect(`/games/${game._id}`);
+}

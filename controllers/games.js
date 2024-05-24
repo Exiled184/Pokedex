@@ -1,5 +1,5 @@
 const Game = require("../models/game");
-
+const Pokemon = require("../models/pokemon");
 module.exports = {
   index,
   show,
@@ -13,8 +13,11 @@ async function index(req, res) {
 }
 
 async function show(req, res) {
-  const game = await Game.findById(req.params.id);
-  res.render("games/show", { title: "Games", game });
+  const game = await Game.findById(req.params.id).populate("pokemon");
+  const pokemon = await Pokemon.find({ _id: { $nin: game.pokemon } }).sort(
+    "name"
+  );
+  res.render("games/show", { title: "Games", game, pokemon });
 }
 
 function newOneGame(req, res) {

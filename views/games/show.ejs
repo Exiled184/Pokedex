@@ -1,20 +1,42 @@
 <%- include('../partials/header') %>
 
+<main>
+  <form
+    id="add_pokemon_to_game"
+    action="/games/<%= game._id %>/pokemons"
+    method="POST"
+  >
+    <select name="pokemonId">
+      <%- pokemon.map(p => `
+      <option value="${p._id}">${p.name}</option>
+      `).join("") %>
+    </select>
+    <button type="submit">Add Pokemon to Game</button>
+  </form>
+</main>
+
 <section id="show-page">
   <div>
-    <div>Trainer:</div>
+    <h3>Trainer:</h3>
     <div><%= game.trainerName %></div>
     <br />
-    <div>Version:</div>
+    <h3>Version:</h3>
     <div><%= game.versionTitle %></div>
     <br />
-    <div>Release Year:</div>
+    <h3>Release Year:</h3>
     <div><%= game.releaseYear %></div>
     <br />
-    <div>Console:</div>
+    <h3>Console:</h3>
     <div><%= game.console %></div>
     <br />
   </div>
+
+  <h3>Pokemon:</h3>
+  <ul>
+    <%- game.pokemon.map(p => `
+    <li>${p.name}</li>
+    ` ).join('') %>
+  </ul>
 </section>
 
 <%- include('../partials/footer') %>

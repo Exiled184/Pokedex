@@ -23,6 +23,12 @@ const gameSchema = new Schema(
       type: String,
       required: true,
     },
+    pokemon: [
+      {
+        type: Schema.Types.ObjectId,
+        ref: "Pokemon",
+      },
+    ],
   },
   { timestamps: true }
 );
