@@ -1,8 +1,8 @@
 <%- include('../partials/header') %>
 
-<h2>Enter a New Game Version</h2>
+<h2 class="new_game">Enter a New Game Version</h2>
 <form action="/games" method="POST" class="new_game">
-  <label
+  <label class="input_boxes"
     >Game Version
     <select name="versionTitle">
       <option value="Red">Red</option>
@@ -15,7 +15,7 @@
 
   <br />
 
-  <label
+  <label class="input_boxes"
     >Release Year
     <select name="releaseYear">
       <option value="1998">1998</option>
@@ -26,7 +26,7 @@
 
   <br />
 
-  <label
+  <label class="input_boxes"
     >Console
     <select name="console">
       <option value="Nintendo Gameboy">Nintendo Gameboy</option>
@@ -42,7 +42,7 @@
 
   <br />
 
-  <label
+  <label class="input_boxes"
     >Trainer Name
     <input type="text" name="trainerName" />
   </label>

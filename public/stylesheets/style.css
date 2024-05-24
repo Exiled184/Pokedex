@@ -43,10 +43,6 @@ body > main {
   overflow-y: scroll;
 }
 
-body > main h1:first-child {
-  margin-bottom: 50px;
-}
-
 nav > a {
   margin: 20px;
   text-decoration: none;
@@ -65,7 +61,7 @@ nav > a.active {
 }
 
 #new-form input[type="submit"] {
-  grid-column: span 2;
+  grid-column: span 3;
   width: 10rem;
   margin-left: auto;
 }
@@ -84,62 +80,6 @@ table td {
   text-align: center;
 }
 
-#list td:nth-child(2),
-#list td:nth-child(3) {
-  min-width: 100px;
-}
-
-#list a {
-  border-radius: 4px;
-  background-color: #b8c0c2;
-  padding: 4px;
-  text-decoration: none;
-  font-size: 14px;
-}
-
-#list a:hover {
-  background-color: white;
-}
-
-#show-page {
-  display: grid;
-  grid-template-columns: auto auto;
-  grid-gap: 1rem;
-}
-
-#show-page div:nth-child(even) {
-  font-weight: bold;
-}
-
-#badge-container {
-  display: flex;
-  flex-wrap: wrap;
-  /* padding: 1rem; */
-  width: 80%;
-  border: 2px solid #b8c0c2;
-  border-radius: 0.5rem;
-  margin: 0.5rem 0 2rem;
-}
-
-.badge {
-  background-color: #b8c0c2;
-  padding: 0.5rem;
-  margin: 0.5rem;
-  border-radius: 0.3rem;
-  font-size: 0.8rem;
-  text-align: center;
-}
-
-#show-page ul {
-  margin: 0 0 2rem;
-  padding: 0;
-  list-style: none;
-}
-
-#show-page li {
-  font-weight: bold;
-}
-
 .login {
   display: flex;
   justify-content: center;
@@ -149,4 +89,17 @@ table td {
 
 .login img {
   height: 30px;
+}
+
+.new_game {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  align-content: stretch;
+}
+
+.pokemon_info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
