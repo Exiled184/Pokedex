@@ -31,11 +31,14 @@ In this version:
 - Express
 - MongoDB
 - API - pokemon
-- API - thingiverse
 
 # Getting started:
 
-TBA
+[Pokedex: My PC](https://pokedex-57b6.onrender.com/)
+
+# Entity Relationship Diagram:
+
+- ERD - ![ERD image](/public/images/Entity%20Relationship%20Diagram.png)
 
 # Next Steps:
 

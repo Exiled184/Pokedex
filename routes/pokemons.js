@@ -10,5 +10,4 @@ router.get("/", pokemonCtrl.index);
 router.get("/search", ensureLoggedIn, pokemonCtrl.searchPokemon);
 router.get("/:id", ensureLoggedIn, pokemonCtrl.show);
 router.post("/save", ensureLoggedIn, pokemonCtrl.savePokemon);
-
 router.delete("/:id", ensureLoggedIn, pokemonCtrl.deleteOnePokemon);
