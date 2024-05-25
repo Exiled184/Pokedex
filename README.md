@@ -36,6 +36,8 @@ In this version:
 
 [Pokedex: My PC](https://pokedex-57b6.onrender.com/)
 
+[Trello board]https://trello.com/b/z1S0vsOL/project-2-pokedex
+
 # Entity Relationship Diagram:
 
 - ERD - ![ERD image](/public/images/Entity%20Relationship%20Diagram.png)
