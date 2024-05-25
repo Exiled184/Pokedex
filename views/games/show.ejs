@@ -35,8 +35,8 @@
 
   <ul>
     <%- game.pokemon.map(p => `
-    <li>${p.name}</li>
-    ` ).join('') %>
+    <img src="${p.sprites.front_default}" />
+    ` ) %>
   </ul>
 
   <form
