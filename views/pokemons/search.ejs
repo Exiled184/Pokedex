@@ -20,21 +20,14 @@
             <th>Pokemon Name</th>
             <th>Pokemon ID:</th>
             <th>Types:</th>
+            <th>Abilities:</th>
             <th>Stats:</th>
-        
           </tr>
 <tbody>
     <td class="pokemon_info_image">
         <img src='<%= pokemon ? pokemon.sprites.front_default: "" %>' class="pokemon_image"></img></td>
-
-
-        
         <td class="pokemon_name"><%= pokemon ? pokemon.name: "" %></td>
-
-       
         <td class="pokemon_id">#<%= pokemon ? pokemon.id: "" %></td>
-
-      
         <td class="pokemon_type">
             <% if (pokemon && pokemon.types) { %>
                 <% pokemon.types.forEach(function(typeObj) { %>
@@ -42,9 +35,13 @@
                 <% }) %>
             <% } %>
                 </td>
-
-     
-         <td class="pokemon_stats">
+    <td class="pokemon_abililites">
+            <% if (pokemon && pokemon.abilities) { %>
+                <% pokemon.abilities.forEach(function(abilitiesObj) { %>
+                    <p><%= abilitiesObj.ability.name %></p>
+                    <% }) %>
+                <% } %>
+    <td class="pokemon_stats">
             <% if(pokemon && pokemon.stats) { %>
                 <% pokemon.stats.forEach(function(statsObj) { %>
                 <p><%= statsObj.stat.name %>: <%= statsObj.base_stat %></p>
