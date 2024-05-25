@@ -22,6 +22,8 @@
             <th>Types:</th>
             <th>Abilities:</th>
             <th>Stats:</th>
+            <th>Height:</th>
+            <th>Weight:</th>
           </tr>
 <tbody>
     <td class="pokemon_info_image">
@@ -49,6 +51,9 @@
                 <% }) %>
                <% } %>
                 </td>
+
+                <td class="pokemon_height"><%= pokemon ? pokemon.height/10: "" %>m</td>
+                <td class="pokemon_weight"><%= pokemon ? pokemon.weight/10: "" %>kg</td>
             </tbody>
         </table>
 </body>

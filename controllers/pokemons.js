@@ -15,7 +15,7 @@ module.exports = {
 
 async function index(req, res) {
   console.log("hello world");
-  res.render("pokemons", { pokemons: await Pokemon.find({}) });
+  res.render("pokemons", { pokemons: await Pokemon.find({}).sort("id") });
 }
 
 async function fetchPokemonData(pokemonNumber) {
