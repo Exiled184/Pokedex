@@ -7,7 +7,6 @@
       <th>ID:</th>
       <th>Name:</th>
       <th>Type/s:</th>
-      <th>Pokemon Details</th>
       <th>Remove:</th>
     </tr>
   </thead>
@@ -19,7 +18,6 @@
     <td><%= p.id %></td>
     <td><%= p.name %></td>
     <td><%= p.types %></td>
-    <td><a href="/pokemons/<%= p._id %>">Pokemon</a></td>
     <td>
       <form
         action="/pokemons/<%= p._id %>?_method=DELETE"
