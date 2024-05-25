@@ -9,6 +9,8 @@ module.exports = {
   savePokemon,
   deleteOnePokemon,
   addPokemonToGame,
+  deletePokemonFromGame,
+  show,
 };
 
 async function index(req, res) {
@@ -96,4 +98,16 @@ async function addPokemonToGame(req, res) {
   game.pokemon.push(req.body.pokemonId);
   await game.save();
   res.redirect(`/games/${game._id}`);
+}
+
+async function deletePokemonFromGame(req, res) {
+  const game = await Game.findById(req.params.id);
+  game.pokemon.pop(req.body.pokemonId);
+  await game.save();
+  res.redirect(`/games/${game._id}`);
+}
+
+async function show(req, res) {
+  const pokemon = await Pokemon.findById(req.params.id);
+  res.render(`pokemons/${Pokemon.id}`, { title: "Pokemon Details", pokemon });
 }

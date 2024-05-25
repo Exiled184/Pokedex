@@ -12,5 +12,9 @@ router.get("/:id", ensureLoggedIn, gameCtrl.show);
 router.post("/", ensureLoggedIn, gameCtrl.create);
 router.post("/:id/pokemons", ensureLoggedIn, pokemonCtrl.addPokemonToGame);
 router.delete("/:id", ensureLoggedIn, gameCtrl.delete);
-
+router.delete(
+  "/:id/pokemons",
+  ensureLoggedIn,
+  pokemonCtrl.deletePokemonFromGame
+);
 module.exports = router;

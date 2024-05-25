@@ -27,12 +27,6 @@ nav > img {
   margin-right: auto;
 }
 
-nav > img {
-  width: 34px;
-  object-fit: contain;
-  margin-right: auto;
-}
-
 body > main {
   grid-area: main;
   display: flex;
@@ -99,6 +93,8 @@ table td {
 }
 
 .pokemon_info_container {
-  display: grid;
-  grid-template-columns: 2fr;
+  display: flex;
+  align-content: center;
+  padding: 0 20px 0 30px;
+  margin: 20px;
 }

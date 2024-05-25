@@ -32,11 +32,20 @@
   </div>
 
   <h3>Pokemon:</h3>
+
   <ul>
     <%- game.pokemon.map(p => `
     <li>${p.name}</li>
     ` ).join('') %>
   </ul>
+
+  <form
+    action="/games/<%= game.id %>/pokemons?_method=DELETE"
+    class="delete-form"
+    method="POST"
+  >
+    <button type="submit">Undo, delete last pokemon</button>
+  </form>
 </section>
 
 <%- include('../partials/footer') %>
