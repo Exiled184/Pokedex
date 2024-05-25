@@ -109,5 +109,5 @@ async function deletePokemonFromGame(req, res) {
 
 async function show(req, res) {
   const pokemon = await Pokemon.findById(req.params.id);
-  res.render(`pokemons/${Pokemon.id}`, { title: "Pokemon Details", pokemon });
+  res.render(`pokemons/${pokemon._id}`, { title: "Pokemon Details", pokemon });
 }

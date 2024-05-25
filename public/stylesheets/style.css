@@ -93,8 +93,6 @@ table td {
 }
 
 .pokemon_info_container {
-  display: flex;
-  align-content: center;
   padding: 0 20px 0 30px;
   margin: 20px;
 }
